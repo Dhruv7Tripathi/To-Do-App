@@ -15,20 +15,19 @@ function SignIn() {
   };
 
   return (
-    <div>
-      <h1>Welcome to Work Place</h1>
-      <p>A todo application</p>
-      <form onSubmit={handleSubmit}>
+    <div className="min-h-screen flex justify-center items-center">
+      <form className="w-fit p-6 border rounded-xl flex flex-col space-y-3" onSubmit={handleSubmit}>
         <div>
           <input
             type="text"
             placeholder="Email"
             className="w-full p-3 bg-gray-100 my-2 rounded"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)
+            }
             required
           />
-        </div>
+        </div >
         <div className="relative">
           <input
             type={visible ? "text" : "password"}
@@ -38,12 +37,7 @@ function SignIn() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <span
-            onClick={() => setVisible(!visible)}
-            className="cursor-pointer absolute right-3 top-3 text-gray-400"
-          >
-            👁️
-          </span>
+
         </div>
         <button className="w-full p-3 bg-blue-600 text-white rounded">
           {loading ? (
@@ -54,16 +48,10 @@ function SignIn() {
             "Sign In"
           )}
         </button>
-      </form>
-      <p>
-        Don't have an Account?
-        <br />
-        <a href="/SignUp" className="text-blue-600 hover:underline">
-          {" "}
-          Create a new Account{" "}
-        </a>
-      </p>
-    </div>
+
+
+      </form >
+    </div >
   );
 }
 
